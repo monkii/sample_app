@@ -1,7 +1,6 @@
 require 'digest'
 class User < ActiveRecord::Base
 
-
   attr_accessor   :password
   attr_accessible :name, :email, :password, :password_confirmation
 
@@ -29,7 +28,6 @@ class User < ActiveRecord::Base
     return nil if user.nil?
     return user if user.has_password?(submitted_password)
   end
-
 
   private
     def encrypt_password
